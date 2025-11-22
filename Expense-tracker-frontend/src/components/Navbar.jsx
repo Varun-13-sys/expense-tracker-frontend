@@ -16,7 +16,7 @@ export default function Navbar() {
       </div>
 
       <div className="nav-right">
-        <Link to="/expense-tracker-frontend/" className="btn-nav home-btn">Home</Link>
+        <Link to="/" className="btn-nav home-btn">Home</Link>
         <Link to="/add" className="btn-nav add-btn">+ Add Expense</Link>
 
         <button
