@@ -7,7 +7,7 @@ import "./styles.css";
 
 export default function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/expense-tracker-frontend">
       <div className="app">
         <Navbar />
 
