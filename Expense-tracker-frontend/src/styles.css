@@ -1,0 +1,242 @@
+/* ensure padding/borders are included in width calculations */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+
+/* ---------- THEME COLORS ---------- */
+:root {
+  --bg: #f4f6fa;
+  --text: #1e1e1e;
+  --card-bg: rgba(255, 255, 255, 0.4);
+  --card-border: rgba(200, 200, 200, 0.5);
+  --primary-blue: #3b82f6;
+  --primary-yellow: #facc15;
+  --success: #22c55e;
+  --danger: #ef4444;
+  --blur: blur(15px);
+  --shadow: 0 6px 25px rgba(0,0,0,0.15);
+}
+
+[data-theme="dark"] {
+  --bg: #0e0e0e;
+  --text: #ffffff;
+  --card-bg: rgba(40, 40, 40, 0.4);
+  --card-border: rgba(100, 100, 100, 0.5);
+  --shadow: 0 6px 25px rgba(0,0,0,0.6);
+}
+
+/* ---------- GLOBAL ---------- */
+body {
+  margin: 0;
+  padding: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: "Inter", sans-serif;
+}
+
+.app {
+  padding-top: 110px;
+}
+
+/* ---------- NAVBAR (FULLY RESPONSIVE) ---------- */
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  min-height: 90px;
+  background: var(--card-bg);
+  backdrop-filter: var(--blur);
+  border-bottom: 1px solid var(--card-border);
+  box-shadow: var(--shadow);
+  
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 25px;
+  flex-wrap: wrap;
+  gap: 12px;
+  z-index: 1000;
+}
+
+.nav-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.logo {
+  width: 40px;
+  height: 40px;
+  background: var(--primary-blue);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-weight: 700;
+  font-size: 18px;
+}
+
+.nav-title {
+  font-size: 26px;
+  font-weight: 700;
+}
+
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.btn-nav {
+  padding: 10px 20px;
+  border-radius: 12px;
+  border: none;
+  font-size: 15px;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.home-btn {
+  background: var(--primary-blue);
+  color: white;
+}
+
+.add-btn {
+  background: var(--primary-yellow);
+  color: #1e1e1e;
+}
+
+.theme-toggle {
+  padding: 10px 14px;
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 12px;
+  cursor: pointer;
+  color: var(--text);
+}
+
+/* ---------- MOBILE RESPONSIVE NAVBAR ---------- */
+@media (max-width: 600px) {
+  .navbar {
+    justify-content: center;
+    padding: 12px 10px;
+  }
+
+  .nav-left,
+  .nav-right {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .nav-title {
+    font-size: 22px;
+  }
+}
+
+/* ---------- CENTER CONTAINER ---------- */
+.container {
+  max-width: 1100px;
+  margin: auto;
+  padding: 20px;
+  text-align: center;
+}
+
+/* ---------- CARDS ---------- */
+.grid {
+  margin-top: 30px;
+  display: grid;
+  gap: 25px;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.card {
+  background: var(--card-bg);
+  backdrop-filter: var(--blur);
+  border: 1px solid var(--card-border);
+  padding: 25px;
+  border-radius: 20px;
+  box-shadow: var(--shadow);
+  transition: 0.2s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card-title {
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.card-amount {
+  color: var(--primary-blue);
+  font-size: 20px;
+  margin-bottom: 12px;
+}
+
+.card-actions {
+  margin-top: 18px;
+}
+
+.btn-edit {
+  background: var(--primary-yellow);
+  padding: 8px 14px;
+  border-radius: 10px;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  margin-right: 8px;
+}
+
+.btn-delete {
+  background: var(--danger);
+  padding: 8px 14px;
+  border-radius: 10px;
+  border: none;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* ---------- FORMS ---------- */
+form {
+  width: 100%;
+  max-width: 400px;
+  margin: auto;
+  background: var(--card-bg);
+  backdrop-filter: var(--blur);
+  border-radius: 18px;
+  padding: 30px;
+  border: 1px solid var(--card-border);
+  box-shadow: var(--shadow);
+}
+
+input {
+  width: 100%;
+  padding: 14px;
+  border-radius: 12px;
+  border: 1px solid var(--card-border);
+  background: transparent;
+  color: var(--text);
+  margin-bottom: 18px;
+  font-size: 15px;
+}
+
+.submit-btn {
+  width: 100%;
+  padding: 14px;
+  background: var(--success);
+  color: white;
+  font-size: 17px;
+  font-weight: 700;
+  border-radius: 12px;
+  border: none;
+  cursor: pointer;
+}
